@@ -16,11 +16,14 @@ final class Template {
     var templateName: String
     // 作成日。 Date型　日時を表す型
     var templateCreatedAt: Date
+    @Relationship(deleteRule: .cascade, inverse: \TemplateSection.template)
+    var section: TemplateSection
     
     init(name: String) {
         self.templateId = UUID().uuidString
         self.templateName = name
         self.templateCreatedAt = Date()
+        self.section = []
     }
     
 }
