@@ -14,10 +14,13 @@ final class TemplateSection {
     var sectionTitle: String
     var sectionOrder: Int
     var template: Template?
+    @Relationship(deleteRule: .cascade, inverse: \CheckItem.section)
+    var items: [CheckItem]
     
     init(title: String, order: Int) {
         self.sectionId = UUID().uuidString
         self.sectionTitle = title
         self.sectionOrder = order
+        self.items = []
     }
 }
