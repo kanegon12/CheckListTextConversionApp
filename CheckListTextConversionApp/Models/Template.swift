@@ -17,13 +17,13 @@ final class Template {
     // 作成日。 Date型　日時を表す型
     var templateCreatedAt: Date
     @Relationship(deleteRule: .cascade, inverse: \TemplateSection.template)
-    var section: TemplateSection
+    var sections: [TemplateSection]
     
     init(name: String) {
         self.templateId = UUID().uuidString
         self.templateName = name
         self.templateCreatedAt = Date()
-        self.section = []
+        self.sections = []
     }
     
 }
