@@ -13,11 +13,11 @@ struct CheckListTextConversionApp: App {
     
     // body は中身・本体という意味。　アプリの画面構成を書く場所
     var body: some Scene {
-        
         // WindowGroup　アプリのウィンドウ１枚を表す
         WindowGroup {
             // 最初に表す画面指定
             ContentView()
         }
-    }    
+        .modelContainer(for: [Template.self, CheckRecord.self])
+    }
 }
