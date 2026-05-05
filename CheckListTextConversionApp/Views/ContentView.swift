@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
 
     var body: some View {
-        // TeplateListViewが完成したら差し替え
-        Text("準備中")
+        TemplateListView()
     }
   
 }
 
 #Preview {
     ContentView()
+        .modelContainer(for: Template.self, inMemory: true)
 }
